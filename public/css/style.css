@@ -1,0 +1,99 @@
+body {
+margin: 0;
+padding: 0;
+min-width: 100%;
+min-height: 100%;
+box-sizing: border-box;
+}
+
+
+h1 {
+font-family: 'Vidaloka', serif;
+font-size: 2em;
+color: #fafafa;
+letter-spacing: 2px;
+line-height: 1.4;
+text-align: center;
+}
+
+h2 {
+font-family: 'Cabin', sans-serif;
+font-size: 1.5em;
+color: #fafafa;
+letter-spacing: 2px;
+line-height: 1.2;
+text-align: center;
+padding: 1em;
+}
+
+a {
+text-decoration: none;
+}
+
+.img-size {
+width:235px;
+height:48px;
+}
+
+.navbar {
+position: absolute;
+top: 40px;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.container {
+display: grid;
+grid-template-columns: auto;
+grid-auto-rows: auto;
+justify-content: center;
+align-items: center;
+height: 100vh;
+max-width: 100%;
+background: url('/images/office010-01.svg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+}
+.container::before{
+content:"";
+background:rgba(0, 0, 0, 0.603);
+position: absolute;
+height: 100%;
+width:100%;
+left:0;
+top:0;
+z-index: -1;
+}
+.content {
+padding: 1em;
+box-sizing: border-box;
+}
+.btn-group {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+flex-direction: row;
+}
+.btn {
+width: 150px;
+margin: 25px;
+padding: 13px;
+font-family: 'Montserrat', sans-serif;
+text-align: center;
+font-size: 1rem;
+font-weight: 600;
+color: #ffffff;
+}
+.btn-primary{
+background-color: rgb(66, 224, 245);
+border: 0;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.712)
+}
+.btn-primary:hover,.btn-primary:focus{
+background-color: #00BED7;
+}

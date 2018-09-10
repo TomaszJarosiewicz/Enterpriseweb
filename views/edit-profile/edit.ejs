@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTERPRISEWEB</title>
+    <link rel="stylesheet" href="/css/edit.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> </head>
+
+<body>
+    <div class="d-flex justify-content-center">
+        <div class="jumbotron">
+            <div class="lead d-flex justify-content-center">
+                <form action="/data-company/update/<%=user._id%>" method="post">
+                    <div class="lead d-flex justify-content-start"> <a href="/edit-profile/data-company" class="btn btn-primary">Wróć</a></div>
+                    <h3 class="d-flex justify-content-center">Edytuj dane</h3>
+                    <hr class="my-4">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label class="col-form-label">Nazwa firmy</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="company" value="<%=user.company %>" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="col-form-label">Ulica</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="streetCompany" value="<%=user.streetCompany %>" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="col-form-label">Miasto</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="city" value="<%=user.city %>" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="col-form-label">Kod pocztowy</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="zipCode" value="<%=user.zipCode %>" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="col-form-label">Numer konta</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="accountNumber" value="<%=user.accountNumber %>" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr class="my-4">
+                    <button type="submit" class="btn btn-success">Zapisz</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

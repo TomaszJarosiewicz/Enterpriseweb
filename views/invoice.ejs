@@ -1,0 +1,506 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTERPRISEWEB</title>
+    <link rel="stylesheet" type="text/css" href="/css/profile_style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script language="javascript" type="text/javascript" src="js/dist/jspdf.customfonts.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/dist/default_vfs.js"></script>
+</head>
+
+<body>
+    <div class="navbar-findcond">
+        <div class="cover-container d-flex h-50 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto">
+                <div class="inner">
+                    <a href="/profile"> <img class="img-logo" src="/images/image_enterpriseweb.png" alt="Enterpriseweb"> </a>
+                    <nav class="nav nav-masthead justify-content-left"> <a class="nav-link" href="/contractors">Kontrahenci</a> <a class="nav-link" href="edit-profile/data-company">Firma</a> <a class="nav-link" href="/logout">Wyloguj</a> </nav>
+                    <nav class="nav nav-masthead justify-content-left">
+                        <h4 class="nav-user">Jesteś zalogowany jako: <%=user.email %></h4> </nav>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3> <span>WYSTAW FAKTURĘ</span> </h3> </div>
+            </div>
+            <div class="row main">
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label>Numer</label>
+                        <input type="text" name="numberInvoice" id="currentNumber" class="form-control" placeholder="Numer"> </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Data wystawienia</label>
+                        <input type="text" name="currentDate" id="currentDate" class="form-control"> </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label>Miejscowość</label>
+                        <input type="text" name="placeIssue" class="form-control" placeholder="Miejsce wystawienia"> </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Data sprzedaży</label>
+                        <input type="text" name="saleDate" id="currentDateSale" class="form-control"> </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="form-group">
+                        <label>Termin płatności</label>
+                        <select name="dateOfPayment" class="form-control">
+                            <option value="1 dzień">1 dzień</option>
+                            <option value="3 dni">3 dni</option>
+                            <option value="5 dni">5 dni</option>
+                            <option value="7 dni">7 dni</option>
+                            <option value="14 dni">14 dni</option>
+                            <option value="21 dni">21 dni</option>
+                            <option value="1 miesiąc">1 miesiąc</option>
+                            <option value="45 dni">45 dni</option>
+                            <option value="2 miesiące">2 miesiące</option>
+                            <option value="75 dni">75 dni</option>
+                            <option value="3 miesiące">3 miesiące</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-body">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <blockquote> <span class="col-form-legend blockquote format-text">Sprzedawca</span> </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row main">
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Nazwa firmy</label>
+                        <input type="text" name="company" class="form-dealer" value="<%=user.company %>" disabled> </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Adres</label>
+                        <input type="text" name="streetCompany" class="form-dealer" value="<%=user.streetCompany %>" disabled> </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Kod pocztowy</label>
+                        <input type="text" name="zipCode" class="form-dealer" value="<%=user.zipCode %>" disabled> </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Miejscowość</label>
+                        <input type="text" name="city" class="form-dealer" value="<%=user.city %>" disabled> </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>NIP</label>
+                        <input type="text" name="numberCompany" class="form-dealer" value="<%=user.numberCompany %>" disabled> </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Numer konta</label>
+                        <input type="text" name="accountNumber" class="form-dealer" value="<%=user.accountNumber %>" disabled> </div>
+                </div>
+            </div>
+            <div class="wrapper-body">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <blockquote> <span class="col-form-legend blockquote format-text">Nabywca</span> </blockquote>
+                    </div>
+                    <div class="col-lg-10">
+                        <h5>Wypełnił poprawnie wszystkie pola, za pomocą przycisku "Dodaj" zapisz dane nabywcy.</h5> </div>
+                </div>
+            </div>
+            <iframe style="width:0; height:0; border:0; border:none" name="transFrame" id="transFrame"></iframe>
+            <form target="transFrame" method="POST" action="/contractors/save" class="row main">
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Nazwa firmy</label>
+                        <input type="text" name="nameContractor" id="contractorCompany" class="form-control" placeholder="Nazwa firmy">
+                        <div class="error-contractorCompany"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Adres</label>
+                        <input type="text" name="addressContractor" id="contractorAddress" class="form-control" placeholder="Adres">
+                        <div class="error-contractorAddress"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Kod pocztowy</label>
+                        <input type="text" name="zipCodeContractor" id="contractorZipCode" class="form-control" placeholder="Kod pocztowy">
+                        <div class="error-contractorZipCode"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>Miejscowość</label>
+                        <input type="text" name="cityContractor" id="contractorCity" class="form-control" placeholder="Miejscowość">
+                        <div class="error-contractorCity"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label>NIP</label>
+                        <input type="text" name="idNumberContractor" id="contractorNumberCompany" class="form-control" placeholder="NIP">
+                        <div class="error-contractorNumberCompany"></div>
+                    </div>
+                </div>
+                <div class="col-lg-12 text-center">
+                    <button class="submit" type="submit">Dodaj</button>
+                </div>
+            </form>
+        </div>
+        <div class="content">
+            <div class="wrapper-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <blockquote> <span class="col-form-legend blockquote format-text">Pozycje</span> </blockquote>
+                    </div>
+                    <div class="col-lg-9">
+                        <h5>Wypełnił poprawie wszystkie pola, za pomocą przycisku dodaj lub usuń wiersz.</h5> </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="row">
+                    <table>
+                        <tbody id="items_table"> </tbody>
+                    </table>
+                </div>
+                <button type="submit" id="addRow" class="btn btn-success">+</button>
+            </div>
+            <div class="main">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Uwagi</label>
+                            <textarea name="message" placeholder="Uwagi"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 table-container">
+                        <div class="table-container">
+                            <table class="table table-item">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">Suma netto</th>
+                                        <td>
+                                            <output id="subTotal">0,00</output>
+                                        </td>
+                                        <th scope="col" class="text-right">zł.</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Suma VAT</th>
+                                        <td>
+                                            <output id="totalTax">0,00</output>
+                                        </td>
+                                        <th scope="col" class="text-right">zł.</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Suma brutto</th>
+                                        <td>
+                                            <output id="grandTotal">0,00</output>
+                                        </td>
+                                        <th scope="col" class="text-right">zł.</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Suma rabatu</th>
+                                        <td>
+                                            <output id="resDiscount">0,00</output>
+                                        </td>
+                                        <th scope="col" class="text-right">zł.</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Suma po rabacie</th>
+                                        <td>
+                                            <output id="discount">0,00</output>
+                                        </td>
+                                        <th scope="col" class="text-right">zł.</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <blockquote> <span class="col-form-legend blockquote format-text">Płatność</span> </blockquote>
+                    </div>
+                    <div class="col-lg-9">
+                        <h5>Wybierz sposób płatności.</h5> </div>
+                </div>
+            </div>
+            <div class="row main">
+                <div class="col-lg-12">
+                    <fieldset class="form-group">
+                        <div class="flex-container">
+                            <div class="form-check flex-item">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked> Gotówka</label>
+                            </div>
+                            <div class="form-check flex-item">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option2"> Przelew </label>
+                            </div>
+                            <div class="form-check flex-item">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option3"> Karta płatnicza </label>
+                            </div>
+                            <div class="form-check flex-item">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option4"> Czek </label>
+                            </div>
+                            <div class="form-check flex-item">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option5"> Weksel </label>
+                            </div>
+                            <div class="form-check flex-item">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option5"> Barter </label>
+                            </div>
+                            <div class="form-check flex-item">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option2"> Opłata za pobraniem </label>
+                            </div>
+                            <div class="form-check flex-item">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option2"> Kompensata </label>
+                            </div>
+                            <div class="form-check flex-item">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option2"> Akredytywa </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="col-lg-12 text-center">
+                        <button type="button" class="btn btn-success" id="cmd">Zapisz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer> &copy; Copyright 2018, Enterpriseweb </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $('#cmd').click(function() {
+            var nameContractor = $('input[name="nameContractor"]').val();
+            addressContractor = $('input[name="addressContractor"]').val(), zipCodeContractor = $('input[name="zipCodeContractor"]').val(), cityContractor = $('input[name="cityContractor"]').val(), idNumberContractor = $('input[name="idNumberContractor"]').val(), company = $('input[name="company"]').val(), streetCompany = $('input[name="streetCompany"]').val(), zipCode = $('input[name="zipCode"]').val(), city = $('input[name="city"]').val(), numberCompany = $('input[name="numberCompany"]').val(), accountNumber = $('input[name="accountNumber"]').val(), numberInvoice = $('input[name="numberInvoice"]').val(), currentDate = $('input[name="currentDate"]').val(), placeIssue = $('input[name="placeIssue"]').val(), saleDate = $('input[name="saleDate"]').val(), dateOfPayment = $('select[name="dateOfPayment"]').val(), nameServis = $('input[name="nameService"]').val(), quantity = $('input[name="quantity"]').val(), unit = $('input[name="unit"]').val(), netAmount = $('input[name="netAmount"]').val(), rateTax = $('select[name="rateTax"]').val(), rowTax = $('input[name="rowTax"]').val(), netValue = $('input[name="netValue"]').val(), totalValue = $('input[name="totalValue"]').val(), totalRowDiscount = $('input[name="totalRowDiscount"]').val(), subTotal = $('output[id="subTotal"]').val(), totalTax = $('output[id="totalTax"]').val(), grandTotal = $('output[id="grandTotal"]').val(), resDiscount = $('output[id="resDiscount"]').val(), discount = $('output[id="discount"]').val();
+            var doc = new jsPDF('p', 'mm', [297, 210]);
+            doc.addFont('Batang.ttf', 'Batang', 'normal');
+            doc.setFont('Batang');
+            doc.setFontSize('8');
+            doc.text(145, 15, 'Data wystawienia ' + currentDate);
+            doc.text(145, 19, 'Data sprzedaży ' + saleDate);
+            doc.text(145, 23, 'Miejsce wystawienia ' + placeIssue);
+            doc.setFontSize('16');
+            doc.text(105, 40, 'FAKTURA NR ' + numberInvoice, null, null, 'center');
+            doc.setFontSize('11');
+            doc.text(15, 65, 'NABYWCA: ' + nameContractor, null, null, 'left');
+            doc.setFontSize('10');
+            doc.text(15, 70, 'Adres: ' + addressContractor, null, null, 'left');
+            doc.text(15, 75, zipCodeContractor + ' ' + cityContractor, null, null, 'left');
+            doc.text(15, 80, 'NIP: ' + idNumberContractor, null, null, 'left');
+            doc.setFontSize('11');
+            doc.text(110, 65, 'SPRZEDAWCA: ' + company);
+            doc.setFontSize('10');
+            doc.text(110, 70, 'Adres: ' + streetCompany);
+            doc.text(110, 75, zipCode + ' ' + city);
+            doc.text(110, 80, 'NIP: ' + numberCompany);
+            doc.text(110, 85, 'Numer konta: ' + accountNumber);
+            doc.setFontSize('9');
+            doc.text(15, 100, 'Nazwa towaru lub usługi', null, null, 'left');
+            doc.text(15, 106, nameServis, null, null, 'left');
+            doc.text(72, 100, 'Ilość', null, null, 'left');
+            doc.text(72, 106, quantity, null, null, 'left');
+            doc.text(83, 100, 'Jedn.', null, null, 'left');
+            doc.text(83, 106, unit, null, null, 'left');
+            doc.text(95, 100, 'Cena netto', null, null, 'left');
+            doc.text(95, 106, netAmount + 'zł.', null, null, 'left');
+            doc.text(116, 100, 'Wartość netto', null, null, 'left');
+            doc.text(116, 106, netValue + 'zł.', null, null, 'left');
+            doc.text(140, 100, 'VAT', null, null, 'left');
+            doc.text(140, 106, rateTax + '%', null, null, 'left');
+            doc.text(150, 100, 'Wartość VAT', null, null, 'left');
+            doc.text(150, 106, rowTax + 'zł.', null, null, 'left');
+            doc.text(173, 100, 'Wartość brutto', null, null, 'left');
+            doc.text(173, 106, totalValue + 'zł.', null, null, 'left');
+            doc.line(15, 102, 195.5, 102);
+            doc.setFontSize('10');
+            doc.text(130, 155, 'Rabat: ' + totalRowDiscount + ' %', null, null, 'left');
+            doc.line(195.5, 157, 130, 157);
+            doc.text(130, 165, 'Suma netto: ' + subTotal + 'zł.', null, null, 'left');
+            doc.text(130, 170, 'Suma VAT: ' + totalTax + 'zł.', null, null, 'left');
+            doc.text(130, 175, 'Suma brutto: ' + grandTotal + 'zł.', null, null, 'left');
+            doc.text(130, 180, 'Suma rabatu: ' + resDiscount, null, null, 'left');
+            doc.text(130, 185, 'Suma po rabacie: ' + discount, null, null, 'left');
+            doc.setFontSize('11');
+            doc.line(195.5, 190, 130, 190);
+            doc.text(130, 195, 'Razem do zapłaty: ' + grandTotal + 'zł.', null, null, 'left');
+            doc.line(195.5, 197, 130, 197);
+            doc.text(15, 190, 'Uwagi: ', null, null, 'left');
+            doc.text(15, 230, 'Forma płatności: Gotówka', null, null, 'left');
+            doc.text(15, 237, 'Termin płatności: ' + ' ' + dateOfPayment, null, null, 'left');
+            doc.save('folder/faktura.pdf');
+        });
+    </script>
+    <script>
+        n = new Date().toLocaleDateString();
+        document.getElementById("currentDate").value = n + "r.";
+        document.getElementById("currentDateSale").value = n + "r.";
+    </script>
+    <script>
+        n = new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        document.getElementById("currentNumber").value = m + "/" + y;
+    </script>
+    <script>
+
+        $('#addRow').click(function () {
+            addItem();
+        });
+
+$('body').on("click", "#rmvButton", function () {
+    delItem($(this));
+});
+
+        $('#items_table').on('mouseleave', '.update', function () {
+            var key = event.keyCode || event.charCode; // if the user hit del or backspace, dont do anything
+            if (key == 8 || key == 46) return false;
+            calculateTotals();
+        });
+        $('#taxPercentage').click(function () {
+            calculateTotals(); // user changed tax percentage, recalculate everything
+        });
+
+        function calculateTotals() {
+
+            // get all of the various input typs from the rows
+            // each will be any array of elements
+            var nameElements = $('.row-name');
+            var quantityElements = $('.row-quantity');
+            var taxElements = $('.row-tax');
+            var taxPercentageElements = $('.row-taxPercentage');
+            var priceElements = $('.row-price');
+            var totalPriceElements = $('.row-totalPrice');
+            var totalElements = $('.row-total');
+            var totalDiscount = $('.row-discount');
+
+            // get the bottom table elements
+
+            var subTotalElement = $('#subTotal');
+            var totalTaxElement = $('#totalTax');
+            var grandTotalElement = $('#grandTotal');
+            var resDiscountElement = $('#resDiscount');
+            var totalDiscountElement = $('#discount');
+
+            var subTotal = 0;
+            var taxTotal = 0;
+            var grandTotal = 0;
+            var priTotal = 0;
+            var totDiscount = 0;
+            var discount = 0;
+
+            $(quantityElements).each(function (i, e) {
+
+                // get all the elements for the current row
+                var nameElement = $('.row-name:eq(' + i + ')');
+                var quantityElement = $('.row-quantity:eq(' + i + ')');
+                var taxElement = $('.row-tax:eq(' + i + ')');
+                var taxPercentageElements = $('.row-taxPercentage:eq(' + i + ')');
+                var priceElement = $('.row-price:eq(' + i + ')');
+                var totalPriceElement = $('.row-totalPrice:eq(' + i + ')');
+                var totalElement = $('.row-total:eq(' + i + ')');
+                var totalDiscount = $('.row-discount:eq(' + i + ')');
+
+                // get the needed values from this row
+                var qty = quantityElement.val().trim().replace(/[^0-9$.,]/g, ''); // filter out non digits like letters
+                qty = qty == '' ? 0 : qty; // if blank default to 0
+                quantityElement.val(qty); // set the value back, in case we had to remove soemthing
+
+                var price = priceElement.val().trim().replace(/[^0-9$.,]/g, '');
+                price = price == '' ? 0 : price; // if blank default to 0
+                priceElement.val(price); // set the value back, in case we had to remove soemthing
+
+                var tds = totalDiscount.val().trim().replace(/[^0-9$.,]/g, ''); // filter out non digits like letters
+                tds = tds == '' ? 0 : tds; // if blank default to 0
+                totalDiscount.val(tds); // set the value back, in case we had to remove soemthing
+
+                // get/set row tax and total
+                // also add to our totals for later
+                var rowPrice = (price * 1000) * qty;
+                subTotal = subTotal + rowPrice;
+
+                var tax = taxPercentageElements.val() * rowPrice;
+                taxElement.val((tax / 100000).toFixed(2));
+                taxTotal = taxTotal + tax;
+
+                var total = rowPrice + tax / 100
+                totalElement.val((total / 1000).toFixed(2));
+                grandTotal = grandTotal + total;
+
+                var priTotal = (price * 1000) * qty;
+                totalPriceElement.val((priTotal / 1000).toFixed(2));
+                priTotal = priTotal + rowPrice;
+
+                if((totalElement.val() != 0) && (totalDiscount.val() != 0)) {
+                var discountTotal = (totalElement.val() * tds);
+                discount = discount + discountTotal;
+                totDiscount = grandTotalElement.val() - discount / 100;
+                }
+
+            });
+
+            // set the bottom table values
+            subTotalElement.val((subTotal / 1000).toFixed(2));
+            totalTaxElement.val((taxTotal / 100000).toFixed(2));
+            grandTotalElement.val((grandTotal / 1000).toFixed(2));
+            resDiscountElement.val((discount / 100).toFixed(2));
+            totalDiscountElement.val((totDiscount * 1).toFixed(2));
+
+        }
+
+    function addItem() {
+         var itemRow =
+
+'<tr>' +
+'<td>' +
+'<div class="row row-form">' +
+    '<div class="col-lg-5 form-group"><label for="nameService">Nazwa towaru lub usługi</label><input type="text" name="nameService" class="form-control row-name" placeholder="Nazwa towaru lub usługi" /></div>' +
+    '<div class="col-lg-1 form-group"><label for="quantity">Ilość</label><input type="text" name="quantity" class="form-control update row-quantity" value="1"></div>' +
+    '<div class="col-lg-2 form-group"><label for="unit">Jednostka</label><input type="text" name="unit" class="form-control" placeholder="Jednostka"></div>' +
+    '<div class="col-lg-2 form-group"><label for="netAmount">Cena netto</label><input type="text" name="netAmount" class="form-control update row-price" placeholder="0,00"></div>' +
+    '<div class="col-lg-2 form-group"><label for="VAT">VAT <div class="select"><select name="rateTax" class="row-taxPercentage"><option value="23">23%</option><option value="8">8%</option><option value="7">7%</option><option value="5">5%</option><option value="0">0%</option></select><div class="select_arrow"></div></div></label><input type="text" name="rowTax" class="form-control update row-tax" placeholder="Wartość VAT" disabled></div>' +
+    '<div class="col-lg-2 form-group"><label for="netValue">Wartość netto</label><input type="text" name="netValue" class="form-control update row-totalPrice" placeholder="0,00" disabled></div>' +
+    '<div class="col-lg-2 form-group"><label for="totalValue">Wartość brutto</label><input type="text" name="totalValue" class="form-control update row-total" placeholder="0,00" disabled></div>' +
+    '<div class="col-lg-1 form-group"><label for="totalRowDiscount">Rabat</label><input type="text" name="totalRowDiscount" class="form-control update row-discount" placeholder="%"></div><button type="submit" class="btn btn-danger" id="rmvButton">-</button>' +
+
+'</div>' +
+'</td>' +
+'</tr>';
+            $("#items_table").append(itemRow);
+        }
+        addItem();
+        function delItem(elem) {
+   elem.parents("tr").remove();
+   calculateTotals();
+}
+    </script>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

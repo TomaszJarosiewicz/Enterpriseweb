@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTERPRISEWEB</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main_style.css">
+</head>
+
+<body>
+    <div class="navbar-findcond">
+        <div class="cover-container d-flex h-50 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto">
+                <div class="inner">
+                    <a href="profile"> <img class="img-logo" src="/images/image_enterpriseweb.png" alt="Enterpriseweb"> </a>
+                    <nav class="nav nav-masthead justify-content-left"> <a class="nav-link" href="contractors">Kontrahenci</a> <a class="nav-link" href="edit-profile/data-company">Firma</a> <a class="nav-link" href="/logout">Wyloguj</a> </nav>
+                    <nav class="nav nav-masthead justify-content-left">
+                        <h4 class="nav-user">Jesteś zalogowany jako: <%=user.email %></h4> </nav>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row container-main">
+            <div class="col-lg-4 col-md-6 col-ms-6 col-xs-12 text-center">
+                <a href="invoice">
+                    <div class="block">
+                        <div class="top">
+                            <div class="middle"> <img src="images/faktura.png" class="img-format" alt="pic" /> </div>
+                        </div>
+                        <div class="heading">WYSTAW FAKTURĘ</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-ms-6 col-xs-12 text-center">
+                <a href="invoice-pro">
+                    <div class="block">
+                        <div class="top">
+                            <div class="middle"> <img src="images/profaktura.png" class="img-format" alt="pic" /> </div>
+                        </div>
+                        <div class="heading">WYSTAW FAKTURĘ PRO-FORMA</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-ms-6 col-xs-12 text-center">
+                <a href="corrective-invoice">
+                    <div class="block">
+                        <div class="top">
+                            <div class="middle"> <img src="images/korektafaktura.png" class="img-format" alt="pic" /> </div>
+                        </div>
+                        <div class="heading">WYSTAW FAKTURĘ KORYGUJACA</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-ms-6 col-xs-12 text-center">
+                <a href="gross-margin">
+                    <div class="block">
+                        <div class="top">
+                            <div class="middle"> <img src="images/marza.png" class="img-format" alt="pic" /> </div>
+                        </div>
+                        <div class="heading">MARŻA</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-ms-6 col-xs-12 text-center">
+                <a href="receipt">
+                    <div class="block">
+                        <div class="top">
+                            <div class="middle"> <img src="images/paragon.png" class="img-format" alt="pic" /> </div>
+                        </div>
+                        <div class="heading">WYSTAW PARAGON</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-ms-6 col-xs-12 text-center">
+                <a href="paying-in">
+                    <div class="block">
+                        <div class="top">
+                            <div class="middle"> <img src="images/pk.png" class="img-format" alt="pic" /> </div>
+                        </div>
+                        <div class="heading">KP - DOWÓD WPŁATY</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-ms-6 col-xs-12 offset-lg-2 text-center">
+                <a href="expenditure">
+                    <div class="block">
+                        <div class="top">
+                            <div class="middle"> <img src="images/wydatki.png" class="img-format" alt="pic" /> </div>
+                        </div>
+                        <div class="heading">WYDATKI</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-ms-6 col-xs-12 text-center">
+                <a href="create-offer">
+                    <div class="block">
+                        <div class="top">
+                            <div class="middle"> <img src="images/oferta.png" class="img-format" alt="pic" /> </div>
+                        </div>
+                        <div class="heading">NAPISZ OFERTĘ</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer> &copy; Copyright 2018, Enterpriseweb </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

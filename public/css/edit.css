@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Muli|Questrial|Nunito|Mukta+Mahee');
+
+html {
+height:100%;
+box-sizing: border-box;
+}
+
+h4, h5 {
+font-size: .9rem!important;
+font-weight: lighter;
+line-height: 1!important;
+}
+
+.form-control {
+padding: .375rem 1rem!important;
+line-height: 1.2!important;
+width: 300px!important;
+}
+
+.col-form-label {
+font-size: medium!important;
+}
+
+.table td, .table th {
+padding: 2em!important;
+vertical-align: top!important;
+border-top: 1px solid #dee2e6!important;
+}
+
+b {
+font-size: 1rem!important;
+font-weight: 900;
+}
+
+body {
+background-color:#fcfcfc;
+min-width:100%;
+min-height:100%;
+position: absolute;
+}
+
+footer {
+bottom: 0px;
+width: 100%;
+position: absolute;
+padding:1.6em;
+background-color:#f2f2f2;
+color:#a3a2a2;
+text-align:center;
+font-size:1.2rem;
+border-top:1px solid #e4e4e4
+}
+
+.navbar-findcond {
+background-color:#1f1f1f;
+border-radius:0;
+padding:.45em;
+margin:0
+}
+
+.navbar-right span {
+font-size:1.3rem;
+color: #6ba8ee;
+margin:0 .4em 0 0
+}
+
+.img-logo {
+width:180px;
+height:30px
+}
+
+.navbar-toggle {
+position:relative;
+float:right;
+padding:.7em .9em;
+margin-top:.5em;
+margin-right:1em;
+margin-bottom:.5em;
+background-color:transparent;
+border:1px solid #6ba8ee;
+border-radius:0
+}
+
+.navbar-toggle .icon-bar {
+display:block;
+width:1.6em;
+height:.15em;
+border-radius:0;
+background-color:#6ba8ee
+}
+
+.nav>li>a:hover {
+text-decoration:none;
+background-color:transparent
+}
+
+.nav>li>a:focus {
+text-decoration:none;
+background-color:transparent
+}
+
+.nav a {
+font-family:'Muli',sans-serif;
+color:#ddd;
+font-size:1.4rem;
+-webkit-transition:all .3s ease;
+-moz-transition:all .3s ease;
+transition:all .3s ease;
+cursor:pointer
+}
+
+.nav a:hover {
+font-family:'Muli',sans-serif;
+color:#6ba8ee;
+text-decoration:none
+}
+
+.col-form-label {
+margin-right: 2.5em!important;
+}
+
+.jumbotron {
+width: 70%;
+margin: 4em!important;
+padding: 5.5em!important;
+}
+
+.container-main {
+margin: 6em 0;
+}
+
+label {
+display: inline-block;
+max-width: 100%;
+margin-bottom: 5px;
+font-weight: 400;
+}
+
+.btn-primary{
+border: 1px solid rgb(1, 136, 199);
+color: rgb(1, 136, 199);
+background-color: rgb(255, 255, 255);
+border-radius: 5px;
+padding: 8px;
+margin: 20px 2px;
+}
+
+.btn-primary:hover {
+border: 1px solid rgb(1, 136, 199);
+color: #fff;
+background-color: rgb(1, 136, 199);
+border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

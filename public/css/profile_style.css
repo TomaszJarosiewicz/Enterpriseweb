@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Muli|Questrial|Nunito:800|Montserrat:300');
+
+html {
+margin:0;
+padding:0;
+min-width:100%;
+min-height:100%
+}
+
+body {
+background-color:#fcfcfc;
+position:absolute;
+min-width:100%;
+min-height:100%;
+font-size: .9rem!important;
+}
+
+footer {
+right:0;
+bottom:0;
+left:0;
+padding:1.6em;
+position:relative;
+background-color:#f2f2f2;
+color:#a3a2a2;
+text-align:center;
+font-size:.8rem;
+border-top:1px solid #e4e4e4
+}
+
+h5 {
+font-family: 'Nunito', sans-serif;
+margin: .7em .8em!important;
+font-size: .9rem!important;
+}
+
+.container-main {
+margin:6em 0;
+}
+
+.btn-success {
+padding: .3em 1.3em!important;
+width: 100px!important;
+margin: 3em .2em!important;
+}
+.fa-download {
+padding: .2em;
+font-size: 1.5rem!important;
+}
+
+.wrapper-body {
+background-color: rgb(92, 181, 233);
+padding: .9em 0 0 0;
+margin: 0 .2em;
+color: #fff;
+}
+
+h3 {
+font-family: 'Mukta Mahee', sans-serif;
+color: #000;
+font-size: 3rem;
+margin-bottom: 15px;
+text-align: center;
+font-weight: bold;
+margin: 2em .6em 1.6em .6em;
+}
+
+h3 span {
+background-color: #fff;
+padding-bottom: .5em;
+border-bottom: 2px solid rgb(13, 117, 177);/*pozioma linia do która znajdzie się pod tekstem nagłówka*/
+}
+
+blockquote {
+padding: .3em 1.3em;
+margin: 0 0 1.4em 1.2em!important;
+font-size: 10.5px;
+border-left: 5px solid rgb(13, 117, 177);
+}
+
+.format-text  {
+width: 100%;
+margin-top: .8em;
+font-size: 2.3rem;
+
+}
+.nav-user {
+display: inline-block;
+margin: .45rem .65rem 0 .75rem;
+font-family:'Montserrat',sans-serif;
+font-size:1rem !important;
+color:#ddd;
+padding:.3em;
+}
+
+.navbar-findcond {
+background-color:#252525;
+border-radius:0;
+padding:.1em;
+margin:0
+}
+
+.navbar-profile {
+background-color:#043e5f;
+border-radius:0;
+padding:.1em;
+margin:0
+}
+
+.img-logo {
+margin: .6rem 0 0 1rem!important;
+width:180px;
+height:34px;
+}
+
+.danger-text {
+color: #9b1d29!important;
+}
+
+.nav>li>a:hover {
+text-decoration:none;
+background-color:transparent
+}
+
+.nav>li>a:focus {
+text-decoration:none;
+background-color:transparent
+}
+
+.nav-link {
+padding: .6rem 1rem!important;
+}
+
+.nav a {
+font-family:'Montserrat',sans-serif;
+color:#ddd;
+font-size:1rem;
+transition:all .3s ease;
+cursor:pointer;
+}
+
+.nav a:hover {
+color:#6ba8ee;
+text-decoration:none
+}
+
+.heading {
+text-decoration:none;
+}
+
+.form-check-input {
+margin-top: .2rem!important;
+}
+
+.flex-container {
+display: flex;
+display: -webkit-flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+align-content: center;
+min-width:100%;
+min-height:100%;
+}
+
+.format-container {
+display: flex;
+display: -webkit-flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: flex-start;
+align-items: flex-start;
+align-content: flex-start;
+}
+
+.main {
+margin: 2em 0 4em 0;
+}
+
+.form-control {
+width: 100%;
+font-size: .7rem!important;
+height:32px!important;
+box-shadow: 0 1px 16px rgba(0,0,0,0.1)!important;
+resize: none;
+background-color: #fff!important;
+color: #495057!important;
+}
+
+textarea {
+width: 100%;
+font-size: .7rem!important;
+border:1px solid #ced4da!important;
+border-radius: .25rem;
+box-shadow: 0 1px 16px rgba(0,0,0,0.1)!important;
+resize: none;
+background-color: #fff!important;
+color: #495057!important;
+}
+
+label {
+font-size:.9rem;
+margin:.6em 0;
+color:#404040;
+font-family: 'Nunito', sans-serif;
+}
+
+.content {
+padding: 2em 1.5em;
+margin: 8em 1.1em;
+background-color: rgb(255, 255, 255);
+border: 1px solid rgb(226, 226, 226);
+box-shadow: 0 2px 22px rgba(0,0,0,0.1);
+
+}
+
+.content legend {
+border-bottom: 1px solid #777777;
+}
+
+.btn {
+width: 50px;
+}
+
+#addRow {
+padding: .38em!important;
+width: 50px!important;
+margin: 0 .2em!important;
+}
+
+.btn-danger {
+margin: 2.2em 0 1em 1.15em;
+}
+
+.table-container {
+width: 100%;
+margin: 10px 7px 0 2px;
+}
+
+.row-form {
+padding: 1em !important;
+margin: .1em;
+}
+
+.table>tbody>tr>th {
+border-bottom: 1px solid rgb(184, 184, 184);
+padding: .7em !important;
+line-height: 1;
+vertical-align: bottom;
+border-top: 0px solid #ddd;
+}
+
+.table>tbody>tr>td  {
+padding: 0 0 .45em 0 !important;
+vertical-align: bottom;
+border-bottom: 1px solid rgb(184, 184, 184);
+border-top: 0px solid #ddd;
+}
+
+.table-text h4 {
+text-align: right;
+}
+
+.myTable {
+border-collapse: collapse;
+border-spacing: 0;
+width: 100%;
+height: 100%;
+margin: 0px;
+padding: 0px;
+}
+
+.myTable tr:last-child td:last-child {
+-moz-border-radius-bottomright: 0px;
+-webkit-border-bottom-right-radius: 0px;
+border-bottom-right-radius: 0px;
+}
+
+.myTable tr:first-child td:first-child {
+-moz-border-radius-topleft: 0px;
+-webkit-border-top-left-radius: 0px;
+border-top-left-radius: 0px;
+}
+
+.myTable tr:first-child td:last-child {
+-moz-border-radius-topright: 0px;
+-webkit-border-top-right-radius: 0px;
+border-top-right-radius: 0px;
+}
+
+.myTable tr:last-child td:first-child {
+-moz-border-radius-bottomleft: 0px;
+-webkit-border-bottom-left-radius: 0px;
+border-bottom-left-radius: 0px;
+}
+
+.select {
+position: relative;
+display: inline-block;
+font-family: 'Nunito', sans-serif;
+font-size:.9rem;
+width: 74px;
+}
+
+.select select {
+display: inline-block;
+width: 100%;
+cursor: pointer;
+padding: 0 1em;
+outline: 0;
+border: 0px;
+border-radius: 10px;
+background: rgb(255, 255, 255);
+color: #7B7B7B;
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+}
+
+.select select::-ms-expand {
+display: none;
+}
+
+.select select:hover,
+.select select:focus {
+background: rgb(255, 255, 255);
+color: #3ba10b;
+}
+
+.select_arrow {
+position: absolute;
+top: 6px;
+right: 12px;
+width: 0;
+height: 0;
+pointer-events: none;
+border-style: solid;
+border-width: 8px 5px 0px 5px;
+border-color: #7B7B7B transparent transparent transparent;
+}
+
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+border-top-color: #3ba10b;
+}
+
+.select select:disabled ~ .select_arrow {
+border-top-color: #CCCCCC;
+}
+
+.form-group {
+margin: 0 .2em !important;
+}
+
+.submit {
+-webkit-transition:all .4s ease;
+-moz-transition:all .4s ease;
+transition:all .4s ease;
+width:110px;
+color:rgb(119, 119, 119);
+margin-top:30px;
+background-color:#ffffff;
+font-size:14px;
+border: 1px solid rgb(119, 119, 119);
+border-radius: 18px;
+padding: 8px;
+}
+
+.submit:hover {
+color:#fff;
+background-color:rgb(119, 119, 119);
+}
+
+textarea {
+width: 100%;
+height: 100px!important;
+resize: none;
+overflow:auto;
+margin: 1em 1em 0 0;
+border: 1px solid #000;
+padding: 1em;
+font-weight: normal;
+}
+
+.text-formation {
+margin: 0 1em 1em 0;
+padding: 0 0 0 1em;
+background-color: #fff;
+width: 48px;
+height: 48px;
+border: 1px solid rgb(105, 105, 105);
+border-radius: 12px;
+line-height: 3.2;
+}
+
+
+label.custom-select {
+position: relative;
+display: inline-block;
+}
+
+.custom-select select {
+display: inline-block;
+border: 1px solid rgb(134, 134, 134);
+padding: 4px 3px 3px 5px;
+margin: 0;
+font: inherit;
+outline:none; /* remove focus ring from Webkit */
+line-height: 1.2;
+background: #f8f8f8;
+-webkit-appearance:none; /* remove the strong OSX influence from Webkit */
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+}
+
+/* for Webkit's CSS-only solution */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.custom-select select {
+padding-right:30px;
+}
+}
+
+/* Since we removed the default focus styles, we have to add our own */
+.custom-select select:focus {
+-webkit-box-shadow: 0 0 3px 1px rgb(134, 134, 134);
+-moz-box-shadow: 0 0 3px 1px rgb(134, 134, 134);
+box-shadow: 0 0 3px 1px rgb(134, 134, 134);
+}
+
+/* Select arrow styling */
+.custom-select:after {
+content: "▼";
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+font-size: 60%;
+line-height: 30px;
+padding: 0 7px;
+background: rgb(134, 134, 134);
+color: white;
+pointer-events:none;
+-webkit-border-radius: 0 6px 6px 0;
+-moz-border-radius: 0 6px 6px 0;
+border-radius: 0 6px 6px 0;
+}
+
+@media (min-width: 48em) {
+.masthead-brand {
+float: left;
+}
+.nav-masthead {
+float: right;
+}
+}
+
+.fa-user {
+color:#6ba8ee;
+}
+
+input[type="text"]:disabled {
+border: 1px solid rgb(255, 152, 152)!important;
+}
+
+input[class="form-dealer"]:disabled {
+    width: 100%;
+font-size: .9rem!important;
+padding: 0!important;
+height:32px!important;
+border: 0px !important;
+resize: none;
+background-color: #fff!important;
+color: #495057!important;
+    }
+
+
+
+
+
+
+
